@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-portfolio-bg: var(--bg);
+  --color-portfolio-primary: #6366F1;
+  --color-portfolio-secondary: #14B8A6;
+  --color-portfolio-dark: var(--dark);
+  --color-portfolio-text: var(--text);
+  --color-portfolio-border: var(--border);
+}
+
+:root {
+  --bg: #0F172A;
+  --dark: #F8FAFC;
+  --text: #94A3B8;
+  --border: #1E293B;
+  --card-bg: #1E293B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-portfolio-bg text-portfolio-text font-sans transition-colors duration-300;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-portfolio-dark font-bold transition-colors duration-300;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-portfolio-primary to-portfolio-secondary;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-portfolio-primary to-portfolio-secondary;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.section-spacing {
+  @apply py-20 md:py-32;
+}
